@@ -2,9 +2,10 @@
 #define TEST_H
 
 
-class Test{
+class Test {
 public:
   void run() const;
 };
+
 
 #endif
