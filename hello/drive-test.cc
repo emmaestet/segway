@@ -158,57 +158,9 @@ bool control::initialized() const
           _sensor_ir  .connected());
 }
 
-void control::terminate_on_key()
-{
- #ifndef NO_LINUX_HEADERS
-  thread t([&] () {
-    int fd = open("/dev/input/by-path/platform-gpio-keys.0-event", O_RDONLY);
-    if (fd  < 0)
-    {
-      cout << "Couldn't open platform-gpio-keys device!" << endl;
-      return;
-    }
+void control::terminate_on_key(){}
 
-    input_event ev;
-    while (true)
-    {
-      size_t rb = read(fd, &ev, sizeof(ev));
-
-      if (rb < sizeof(input_event))
-        continue;
-
-      if ((ev.type == EV_KEY) /*&& (ev.value == KEY_PRESS)*/)
-      {
-        terminate();
-        return;
-      }
-    }
-  });
-  t.detach();
- #endif
-}
-
-void control::panic_if_touched()
-{
-  if (!_sensor_touch.connected())
-  {
-    cout << "no touch sensor found!" << endl;
-    return;
-  }
-
-  thread t([&] () {
-    while (!_terminate) {
-      if (_sensor_touch.value())
-      {
-        terminate();
-        reset();
-        break;
-      }
-      this_thread::sleep_for(chrono::milliseconds(100));
-    }
-  });
-  t.detach();
-}
+void control::panic_if_touched(){}
 
 void control::remote_loop()
 {
