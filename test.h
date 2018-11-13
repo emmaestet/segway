@@ -4,7 +4,7 @@
 
 class Test {
 public:
-  void run() const;
+  int run() const;
 };
 
 

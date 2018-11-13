@@ -3,5 +3,6 @@
 
 int main() {
   Test m;
-  m.run();
+  int r = m.run();
+  return r;
 }
