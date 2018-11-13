@@ -7,8 +7,8 @@ void Test::run() const {
   typedef std::set<mode_type> mode_set;
   typedef std::string         address_type;
 
-  ev3dev::large_motor B;
-    B.run_forever();
-  /*function_motor(, 1000, 15, "run-timed");
-  B.run_forever();*/
+  ev3dev::large_motor A(ev3dev::OUTPUT_A);
+
+  A.run_forever();
+
 }
