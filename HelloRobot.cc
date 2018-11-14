@@ -6,6 +6,6 @@
 
 int main() {
   ev3dev::lcd disp;
-  disp.fill(b);
+  disp.fill('R');
 
 }
