@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-from ev3dev.motor import LargeMotor, OUTPUT_A, OUTPUT_D, SpeedPercent, MoveTank
-from ev3dev.sensor import INPUT_1
-from ev3dev.sensor.lego import TouchSensor
-from ev3dev.led import Leds
+from ev3dev2.motor import LargeMotor, OUTPUT_A, OUTPUT_D, SpeedPercent, MoveTank
+from ev3dev2.sensor import INPUT_1
+from ev3dev2.sensor.lego import TouchSensor
+from ev3dev2.led import Leds
 
 
 tank_drive = MoveTank(OUTPUT_A, OUTPUT_D)
