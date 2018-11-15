@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-tank_drive = MoveTank(OUTPUT_A, OUTPUT_B)
+tank_drive = MoveTank(OUTPUT_A, OUTPUT_D)
 
 # drive in a turn for 5 rotations of the outer motor
 # the first two parameters can be unit classes or percentages.
